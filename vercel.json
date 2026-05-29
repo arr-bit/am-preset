@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/auth.js",    "use": "@vercel/node" },
+    { "src": "api/presets.js", "use": "@vercel/node" },
+    { "src": "api/delete.js",  "use": "@vercel/node" },
+    { "src": "index.html",     "use": "@vercel/static" },
+    { "src": "config.js",      "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/auth",    "dest": "/api/auth.js" },
+    { "src": "/api/presets", "dest": "/api/presets.js" },
+    { "src": "/api/delete",  "dest": "/api/delete.js" },
+    { "src": "/(.*)",        "dest": "/index.html" }
+  ]
+}
